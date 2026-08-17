@@ -12,6 +12,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#10b981',
     tag: 'Aritmética 01',
     totalLevels: 3,
+    introVideoId: 'EBc_gdyp0ro',
+    introVideoTitle: 'Fundamentos Aritméticos: Jerarquía de Operaciones y Leyes de Signos',
     formulas: [
       {
         id: 'pemdas',
@@ -162,6 +164,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#06b6d4',
     tag: 'Estructura 02',
     totalLevels: 3,
+    introVideoId: '',
+    introVideoTitle: 'Álgebra Básica: Leyes de Exponentes, Productos Notables y Factorización',
     formulas: [
       {
         id: 'leyes-exponentes',
@@ -312,6 +316,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#06b6d4',
     tag: 'Operaciones 03',
     totalLevels: 3,
+    introVideoId: '',
+    introVideoTitle: 'Fracciones: Operaciones, MCM y Simplificación',
     formulas: [
       {
         id: 'suma-resta-frac',
@@ -451,6 +457,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#06b6d4',
     tag: 'Resolución 04',
     totalLevels: 3,
+    introVideoId: '',
+    introVideoTitle: 'Ecuaciones: Lineales, Cuadráticas y Sistemas 2x2',
     formulas: [
       {
         id: 'despeje-lineal',
@@ -568,6 +576,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#06b6d4',
     tag: 'Plano 05',
     totalLevels: 3,
+    introVideoId: '',
+    introVideoTitle: 'Geometría Analítica: Plano Cartesiano, Rectas y Cónicas',
     formulas: [
       {
         id: 'distancia-dos-puntos',
@@ -695,6 +705,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#06b6d4',
     tag: 'Ángulos 06',
     totalLevels: 3,
+    introVideoId: '',
+    introVideoTitle: 'Trigonometría: Razones, Pitágoras e Identidades',
     formulas: [
       {
         id: 'teorema-pitagoras',
@@ -810,6 +822,8 @@ export const MATH_MODULES: MathModule[] = [
     glowColor: '#06b6d4',
     tag: 'Avanzado 07',
     totalLevels: 3,
+    introVideoId: '',
+    introVideoTitle: 'Cálculo Diferencial: Límites, Derivadas e Integrales',
     formulas: [
       {
         id: 'regla-potencia-derivada',

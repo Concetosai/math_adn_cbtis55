@@ -35,6 +35,7 @@ import { SettingsAdminModal } from './components/SettingsAdminModal';
 import { AITutorModal } from './components/AITutorModal';
 import { VoiceTutorMiniChat } from './components/VoiceTutorMiniChat';
 import { GlobalRoadmapModal } from './components/GlobalRoadmapModal';
+import { ModuleIntroVideoModal } from './components/ModuleIntroVideoModal';
 import { Award, Sparkles, X, Bot, Volume2, Map, ChevronDown, ChevronUp, Layers, SlidersHorizontal } from 'lucide-react';
 import { INITIAL_MEDALS } from './data/medalsData';
 import { AITutorConfig } from './types';
@@ -91,6 +92,10 @@ export default function App() {
   const [isMultiplicationTablesOpen, setIsMultiplicationTablesOpen] = useState(false);
   const [isBasicOperationsOpen, setIsBasicOperationsOpen] = useState(false);
   const [basicOperationsInitialLevel, setBasicOperationsInitialLevel] = useState<1 | 2 | 3>(1);
+
+  // Module Intro Video Modal
+  const [isModuleIntroOpen, setIsModuleIntroOpen] = useState(false);
+  const [introModule, setIntroModule] = useState<MathModule | null>(null);
 
   // Toast notification for newly unlocked medals
   const [unlockedMedalToast, setUnlockedMedalToast] = useState<string | null>(null);
@@ -300,6 +305,19 @@ export default function App() {
     setActiveView('practice');
     setIsVoiceTutorOpen(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Open intro video modal when clicking "Practicar" on a ModuleCard
+  const handleModuleCardPractice = (module: MathModule, level?: 1 | 2 | 3) => {
+    soundEngine.playClick();
+    if (level) {
+      // Direct level click — skip intro video
+      handleStartPractice(module, level);
+    } else {
+      // Main "Practicar" button — show intro video first
+      setIntroModule(module);
+      setIsModuleIntroOpen(true);
+    }
   };
 
   // Handle exercise solved progress update
@@ -524,7 +542,7 @@ export default function App() {
                               module={module}
                               progress={progress.moduleProgress[module.id]}
                               onOpenFormulas={handleOpenFormulas}
-                              onStartPractice={handleStartPractice}
+                              onStartPractice={handleModuleCardPractice}
                               onOpenMultiplicationTables={
                                 module.id === 'base-cero' ? () => setIsMultiplicationTablesOpen(true) : undefined
                               }
@@ -673,6 +691,15 @@ export default function App() {
         }}
         onOpenMedals={() => setIsMedalsOpen(true)}
         onOpenVoiceTutor={() => setIsVoiceTutorOpen(true)}
+      />
+
+      {/* Module Intro Video Modal (YouTube embed + Continue/Replay buttons) */}
+      <ModuleIntroVideoModal
+        isOpen={isModuleIntroOpen}
+        module={introModule}
+        onClose={() => setIsModuleIntroOpen(false)}
+        onStartPractice={handleStartPractice}
+        onOpenFormulas={handleOpenFormulas}
       />
 
       {/* Virtual Scratchpad Canvas (Pizarra de Cálculo) */}

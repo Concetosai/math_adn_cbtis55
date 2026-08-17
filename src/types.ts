@@ -54,6 +54,8 @@ export interface MathModule {
   totalLevels: number;
   formulas: FormulaRule[];
   exercises: Exercise[];
+  introVideoId?: string;
+  introVideoTitle?: string;
 }
 
 export interface Medal {
