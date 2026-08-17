@@ -1,0 +1,10 @@
+{
+  "name": "CBTIS 55 MATH",
+  "description": "Aplicación oficial CBTIS 55 MATH con diseño ADN, glassmorphism, 7 módulos interactivos, panel de administración/docente, Tutor IA con voz TTS y reconocimiento STT.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

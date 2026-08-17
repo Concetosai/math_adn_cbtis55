@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --adn-cyan: #06b6d4;
+    --adn-aqua: #00f2ff;
+    --adn-cyan-deep: #00acc1;
+    --bento-bg: #f0f4f8;
+  }
+
+  body {
+    background-color: #f0f4f8;
+    color: #1e293b;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(#d1d5db 1.2px, transparent 1.2px);
+    background-size: 32px 32px;
+  }
+}
+
+/* Bento Grid Glassmorphism & Card Styles */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08), 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+.glass-panel-glow {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(6, 182, 212, 0.35);
+  box-shadow: 0 20px 45px -10px rgba(6, 182, 212, 0.18), 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.deep-shadow {
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+}
+
+.medal-glow {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.75));
+}
+
+/* Neon Tactile 3D Buttons */
+.neon-button, .btn-3d-cyan {
+  position: relative;
+  background: #00f2ff;
+  border-bottom: 5px solid #00acc1;
+  color: #0f172a;
+  font-weight: 900;
+  box-shadow: 0 6px 0 #00acc1, 0 0 22px rgba(0, 242, 255, 0.45);
+  border-radius: 1rem;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.neon-button:hover, .btn-3d-cyan:hover {
+  background: #26f4ff;
+  box-shadow: 0 6px 0 #00acc1, 0 0 28px rgba(0, 242, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.neon-button:active, .btn-3d-cyan:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #00acc1, 0 0 12px rgba(0, 242, 255, 0.3);
+  border-bottom-width: 1px;
+}
+
+.btn-3d-secondary {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-bottom: 4px solid #94a3b8;
+  color: #334155;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-3d-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+.btn-3d-secondary:active {
+  transform: translateY(3px);
+  border-bottom-width: 1px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Neon Cyan Glow Ring & Accents */
+.neon-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+}
+
+.neon-border-cyan {
+  border-color: #00f2ff;
+  box-shadow: 0 0 18px rgba(0, 242, 255, 0.4);
+}
+
+/* Bento Tile Transitions */
+.bento-tile {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.bento-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 25px rgba(6, 182, 212, 0.12);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00acc1;
+}
+
+/* Math formula display formatting */
+.math-display {
+  font-family: 'Cambria Math', 'STIX Two Math', 'KaTeX_Main', serif, system-ui;
+  letter-spacing: 0.02em;
+}
